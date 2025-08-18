@@ -9,6 +9,7 @@
     body {
       font-family: "Arial", sans-serif;
       color: #fff;
+      background-color: #000; /* 預設黑色背景，避免背景圖載不到時全白 */
     }
     .background {
       position: fixed;
@@ -16,7 +17,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('https://ppt.cc/fWENsx@.jpg'); /* 背景可替換 */
+      background-image: url('https://picsum.photos/1920/1080'); /* 測試用背景，可換 */
       background-size: cover;
       background-position: center;
       filter: blur(12px) brightness(0.6);
@@ -28,7 +29,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(0, 0, 0, 0.3); /* 改成黑色透明，讓白字更清楚 */
       z-index: -1;
     }
     .content {
@@ -53,4 +54,91 @@
     }
     .subtitle {
       font-size: 1.3em;
-      margin
+      margin-bottom: 25px;
+      color: #FFDDC1;
+      text-shadow: 1px 1px #000;
+    }
+    .section-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #ff66ff;
+      text-shadow: 2px 2px #000;
+    }
+    button {
+      font-size: 1.1em;
+      padding: 12px 24px;
+      margin: 10px;
+      background: linear-gradient(45deg, #ff5f6d, #ffc371);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 94, 98, 0.8);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+    }
+    .social-links {
+      margin-top: 30px;
+      font-size: 1.1em;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 10px 15px;
+      color: #00ffcc;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 2px dashed #fff;
+      border-radius: 30px;
+      background-color: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 12px #00ffcc;
+      transition: transform 0.3s;
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1>🎉本群專屬折扣碼🎉</h1>
+    <p class="subtitle">點按鈕自動複製＋直達領券頁！</p>
+
+    <div class="section">
+      <p class="section-title">🔥 全站100-20券 </p>
+      <button onclick="copyCode('7ZTAH3K39')">第1組</button>
+      <button onclick="copyCode('83BUAGBUJ')">第2組</button>
+      <button onclick="copyCode('QQTYXLNSE')">第3組</button>
+    </div>
+
+    <div class="social-links">
+      <p class="section-title">📢 看更多優惠：</p>
+      <a href="https://line.me/ti/g2/ARxvlA8qbIgJf6ut4bngnwDGnLWy3x62pbqiMw" target="_blank">LINE社群</a>
+      <a href="https://www.dcard.tw/@t5976" target="_blank">Dcard帳號</a>
+      <a href="https://www.instagram.com/dd_shopping_go/" target="_blank">Instagram帳號</a>
+    </div>
+  </div>
+
+  <script>
+    function copyCode(code) {
+      const el = document.createElement('textarea');
+      el.value = code;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      window.location.href = 'https://s.shopee.tw/3ftanzS6Zf';
+    }
+  </script>
+</body>
+</html>
